@@ -5,7 +5,7 @@ numpy_baseline.py — standalone CPU reference for the density map scatter bench
 This script requires ONLY numpy and torch (no DREAMPlace C++ extension, no tt-metal).
 It generates the exact same synthetic workload as the TT Metal C++ binary and computes
 the density map using the same triangle-density formula, producing a reference that the
-expert can compare directly against the TT kernel output.
+you can compare directly against the TT kernel output.
 
 Run it first, then compare its output against the geometry kernel's reported numbers.
 

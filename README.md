@@ -1,6 +1,6 @@
 # Reproducing the Geometry-Path Accuracy Bug
 
-This guide gives an **expert** everything needed to reproduce, explore, and (ideally) fix
+This guide gives you everything needed to reproduce, explore, and (ideally) fix
 the geometry SFPU kernel accuracy issue on a Wormhole B0 / N150 Tenstorrent device.
 
 ---
@@ -233,7 +233,7 @@ It passes with rel L2 ~1.7e-4. This confirms:
 
 ---
 
-## Suggested expert experiments
+## Suggested experiments
 
 **Experiment A — Verify absolute vs relative dst addressing**
 

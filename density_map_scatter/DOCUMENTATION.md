@@ -287,7 +287,7 @@ index `d_px/d_py/d_area`. The face lambda uses `dst_reg[d * N + i]` (SFPI relati
 write ptr), so `dst_reg[0 * N + i]` is tile 0 relative to the write base — which is tile 0 in
 global dest. `dst_reg[1 * N + i]` is tile 1 in global dest, etc.
 
-**The critical question for an expert:** does `_llk_math_eltwise_ternary_sfpu_start_(0)` always
+**The critical question:** does `_llk_math_eltwise_ternary_sfpu_start_(0)` always
 set the base to tile 0 unconditionally, meaning tile-indexed reads (`dst_reg[d*N+i]`) are
 absolute and do NOT automatically shift for the output tile? Or is there a face-pointer
 hardware register (`DEST_TARGET_REG_CFG_MATH_Offset`) that moves under `TTI_SETRWC` between
@@ -301,7 +301,7 @@ correct, others wrong in a per-face pattern).
 
 ---
 
-### Open questions for SFPU / LLK experts
+### Open questions for SFPU / LLK
 
 1. **Is `dst_reg[d*N + i]` in SFPI an absolute address, or relative to the per-face hardware
    dest-write pointer set by `TTI_SETRWC`?**
@@ -364,7 +364,7 @@ Pre-multiply kernel speedup vs CPU: **36.5×**. Geometry: **17.2×** (but accura
 | `DOCUMENTATION.md` | This file |
 | `PERFORMANCE_REPORT.md` | Detailed timing breakdown |
 | `PROFILING_REPORT.md` | TT device profiler / Tracy data |
-| `REPRODUCE.md` | Step-by-step expert reproduction guide |
+| `REPRODUCE.md` | Step-by-step reproduction guide |
 
 ---
 
@@ -378,4 +378,4 @@ Pre-multiply kernel speedup vs CPU: **36.5×**. Geometry: **17.2×** (but accura
 | Pre-multiply SFPU kernel | ✓ Passes (rel L2 ~1.7e-4) |
 | Geometry kernel px/py faces | ? Produces systematic ~50% errors on some tasks |
 | Geometry kernel area multiply | ? Appears correct in isolation; suspect px or py is wrong |
-| Per-face dst addressing in ternary LLK | ❓ **Root cause candidate — needs Metal/LLK expert** |
+| Per-face dst addressing in ternary LLK | ❓ **Root cause candidate — needs investigation** |

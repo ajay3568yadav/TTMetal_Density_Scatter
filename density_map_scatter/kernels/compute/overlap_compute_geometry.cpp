@@ -109,7 +109,7 @@
 //    SFPU passes is not a valid pattern on this hardware.
 //
 // ─────────────────────────────────────────────────────────────────────────────
-// SUGGESTED EXPERT EXPERIMENTS (see REPRODUCE.md for full details)
+// SUGGESTED EXPERIMENTS (see REPRODUCE.md for full details)
 // ─────────────────────────────────────────────────────────────────────────────
 //
 //  Experiment A — Verify absolute vs relative DST addressing

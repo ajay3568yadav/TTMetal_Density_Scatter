@@ -59,7 +59,7 @@ SCRIPT_DIR    = os.path.dirname(os.path.abspath(__file__))
 #   2. ./build/programming_examples/                (script run from inside tt-metal/)
 #   3. ../tt-metal/build/programming_examples/      (script in sibling dir of tt-metal)
 #   4. ../../tt-metal/build/programming_examples/   (script two levels above tt-metal)
-# The expert can always override with --tt-binary / --tt-binary-geometry.
+# You can always override with --tt-binary / --tt-binary-geometry.
 def _find_tt_binary(name: str) -> str:
     candidates = []
     tt_home = os.environ.get("TT_METAL_HOME", "")
